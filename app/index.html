@@ -3,10 +3,57 @@
 <head>
 	<meta charset="utf-8">
 	<title>Image Gallery</title>
-	<meta name="viewport" content="device-width", initial-scale="1">
 	<link rel="stylesheet" href="temp/styles/styles.css" type="text/css">
+
+    
+    
 </head>
-<body>	
-	
+<body>
+    <div class="slider-container" id="sliderDivs">
+        <div class="image-wrapper image-wrapper--active">
+            <div class="image-wrapper__image">
+                <img src="assets/img/avengers.jpg" alt="Marvel's Avengers">
+            </div>
+            <div class="image-wrapper__caption">
+                <p>Marvel's the Avengers</p>
+            </div>
+        </div>
+        <div class="image-wrapper">
+            <div class="image-wrapper__image">
+                <img src="assets/img/blade-runner-2049.jpg" alt="Blade Runner 2049">
+            </div>
+            <div class="image-wrapper__caption">
+                <p>Blade Runner 2049</p>
+            </div>
+        </div>
+        <div class="image-wrapper">
+            <div class="image-wrapper__image">
+                <img src="assets/img/guardians-of-the-galaxy.jpg" alt="Guardians of the Galaxy">
+            </div>
+            <div class="image-wrapper__caption">
+                <p>Guardians of the Galaxy</p>
+            </div>
+        </div>
+        <div class="image-wrapper">
+            <div class="image-wrapper__image">
+                <img src="assets/img/justice-league.jpg" alt="Justice League">
+            </div>
+            <div class="image-wrapper__caption">
+                <p>Justice League</p>
+            </div>
+        </div>
+        
+        <div class="slider-container__arrows">
+            <div class="slider-container__arrows--left">
+                <img src="assets/img/icons/back.png" alt="left-arrow">
+            </div>
+            <div class="slider-container__arrows--right">
+                <img src="assets/img/icons/next.png" alt="right-arrow">
+            </div>
+        </div>
+        
+    </div>
+    
+    <script type="text/javascript" src="assets/js/script.js"></script>
 </body>
 </html>

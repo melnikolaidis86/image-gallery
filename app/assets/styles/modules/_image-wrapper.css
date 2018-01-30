@@ -1,0 +1,30 @@
+.image-wrapper {
+    
+    position: relative;
+    display: none;
+    max-width: 100%;
+    margin: 0;
+    padding: 0;
+    
+    &--active {
+        display: block;
+    }
+    
+    &__image {
+        max-width: 100%;
+    }
+    
+    &__caption {
+        position: absolute;
+        background-color: rgba(40, 40, 40, .5);
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        z-index: 3;
+        text-align: center;
+        color: #FFF;
+        font-size: 1.1rem;
+        padding: 5px 0;
+    }
+
+}

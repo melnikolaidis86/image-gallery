@@ -1,0 +1,46 @@
+.slider-container {
+    position: relative;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+    
+    &__arrows {
+        
+        cursor: pointer;
+        
+        &--left {
+            width: 68px;
+            height: 68px;
+            background-color: rgba(40, 40, 40, .7);
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            left: 0;
+            opacity: .8;
+            transition: all, .3s ease-in-out;
+            
+            &:hover {
+                background-color: rgba(40, 40, 40, .5);
+                opacity: 1;
+            }
+        }
+        
+        &--right {
+            width: 68px;
+            height: 68px;
+            background-color: rgba(40, 40, 40, .7);
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            right: 0;
+            opacity: .8;
+            transition: all, .3s ease-in-out;
+            
+            &:hover {
+                background-color: rgba(40, 40, 40, .5);
+                opacity: 1;
+            }
+        }
+    }
+
+}
