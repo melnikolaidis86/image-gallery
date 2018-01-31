@@ -19,8 +19,8 @@ img {
             background-color: rgba(40, 40, 40, .7);
             position: absolute;
             top: 50%;
-            -webkit-transform: translateY(-50%);
-                    transform: translateY(-50%);
+            -webkit-transform: translateY(-100%);
+                    transform: translateY(-100%);
             left: 0;
             opacity: .8;
             -webkit-transition: all, .3s ease-in-out;
@@ -36,8 +36,8 @@ img {
             background-color: rgba(40, 40, 40, .7);
             position: absolute;
             top: 50%;
-            -webkit-transform: translateY(-50%);
-                    transform: translateY(-50%);
+            -webkit-transform: translateY(-100%);
+                    transform: translateY(-100%);
             right: 0;
             opacity: .8;
             -webkit-transition: all, .3s ease-in-out;
@@ -47,6 +47,18 @@ img {
                 background-color: rgba(40, 40, 40, .5);
                 opacity: 1;
             }
+.slider-container__thumbnails {
+        
+        display: -webkit-box;
+        
+        display: -ms-flexbox;
+        
+        display: flex;
+    }
+.slider-container__thumbnails__image {
+            
+            max-width: 200px;
+        }
 .image-wrapper {
     
     position: relative;
