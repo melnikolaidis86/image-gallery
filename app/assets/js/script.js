@@ -1,27 +1,38 @@
-var slideDisplay = 0;
-var slides = document.getElementsByClassName('image-wrapper');
-var slidesLength = document.getElementsByClassName('image-wrapper').length;
+// Variables for image-container, image-wrappers and className for image to display
+var slideDisplay = 0,
+    slides = document.getElementsByClassName('image-wrapper'),
+    slidesLength = document.getElementsByClassName('image-wrapper').length,
+    classNameForDisplay = 'image-wrapper--active';
+
+// Variables for thumbnails and className for thumbnails
+var sliderThumbnails = document.getElementById('sliderThumbnails'),
+    classNameForThumbnails = 'slider-container__thumbnails__image';
+
 
 function reset () {
     
     for (i=0; i < slidesLength; i++) {
-        slides[i].classList.remove('image-wrapper--active');
+        removeClassFromElement(slides[i], classNameForDisplay);
     }
     
-    slides[slideDisplay].classList.add('image-wrapper--active');
+}
+
+function playSelected(slideIndex) {
     
+    reset();
+    addClassToElement(slides[slideIndex], classNameForDisplay);
 }
 
 function playNext () {
     
     if (slideDisplay == slidesLength - 1) {
+        reset();
         slideDisplay = 0;
-        slides[slideDisplay].classList.add('image-wrapper--active');
-        slides[slidesLength - 1].classList.remove('image-wrapper--active'); 
+        addClassToElement(slides[slideDisplay], classNameForDisplay);
     } else {
+        reset();
         slideDisplay++;
-        slides[slideDisplay].classList.add('image-wrapper--active');
-        slides[slideDisplay - 1].classList.remove('image-wrapper--active');  
+       addClassToElement(slides[slideDisplay], classNameForDisplay); 
     }
         
 }
@@ -29,16 +40,17 @@ function playNext () {
 function playPrevious () {
     
     if (slideDisplay == 0) {
+        reset();
         slideDisplay = slidesLength - 1;
-        slides[slideDisplay].classList.add('image-wrapper--active');
-        slides[0].classList.remove('image-wrapper--active'); 
+        addClassToElement(slides[slideDisplay], classNameForDisplay);
     } else {
+        reset();
         slideDisplay--;
-        slides[slideDisplay].classList.add('image-wrapper--active');
-        slides[slideDisplay + 1].classList.remove('image-wrapper--active');  
+        addClassToElement(slides[slideDisplay], classNameForDisplay);
     }
         
 }
+
 
 function gatherImages () {
     
@@ -57,14 +69,29 @@ function gatherImages () {
 function createThumbnails () {
     
     var imagesArray = gatherImages();
-    var sliderThumbnails = document.getElementById('sliderThumbnails');
     
     for(i = 0; i < imagesArray.length; i++) {
         
-        var imagediv = document.createElement('dic');
+        var imagediv = document.createElement('div');
         var imageElement = document.createElement('img');
+        
         imageElement.src = imagesArray[i];
         imagediv.appendChild(imageElement);
+        addClassToElement(imagediv, classNameForThumbnails);
         sliderThumbnails.appendChild(imagediv);
     }
 }
+
+function addClassToElement(element, className) {
+    
+    element.classList.add(className);
+}
+
+function removeClassFromElement(element, className) {
+    
+    element.classList.remove(className);
+}
+
+
+    
+
