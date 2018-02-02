@@ -77,6 +77,7 @@ function createThumbnails () {
         
         imageElement.src = imagesArray[i];
         imagediv.appendChild(imageElement);
+        imagediv.setAttribute('onclick', 'playSelected('+ i +')');
         addClassToElement(imagediv, classNameForThumbnails);
         sliderThumbnails.appendChild(imagediv);
     }
@@ -91,7 +92,3 @@ function removeClassFromElement(element, className) {
     
     element.classList.remove(className);
 }
-
-
-    
-
