@@ -1,56 +1,7 @@
-// Variables for image-container, image-wrappers and className for image to display
-var slideDisplay = 0,
-    slides = document.getElementsByClassName('image-wrapper'),
-    slidesLength = document.getElementsByClassName('image-wrapper').length,
-    classNameForDisplay = 'image-wrapper--active';
-
 // Variables for thumbnails and className for thumbnails
 var sliderThumbnails = document.getElementById('sliderThumbnails'),
+    slidesLength = document.getElementsByClassName('image-wrapper').length,
     classNameForThumbnails = 'slider-container__thumbnails__image';
-
-
-function reset () {
-    
-    for (i=0; i < slidesLength; i++) {
-        removeClassFromElement(slides[i], classNameForDisplay);
-    }
-    
-}
-
-function playSelected(slideIndex) {
-    
-    reset();
-    addClassToElement(slides[slideIndex], classNameForDisplay);
-}
-
-function playNext () {
-    
-    if (slideDisplay == slidesLength - 1) {
-        reset();
-        slideDisplay = 0;
-        addClassToElement(slides[slideDisplay], classNameForDisplay);
-    } else {
-        reset();
-        slideDisplay++;
-       addClassToElement(slides[slideDisplay], classNameForDisplay); 
-    }
-        
-}
-
-function playPrevious () {
-    
-    if (slideDisplay == 0) {
-        reset();
-        slideDisplay = slidesLength - 1;
-        addClassToElement(slides[slideDisplay], classNameForDisplay);
-    } else {
-        reset();
-        slideDisplay--;
-        addClassToElement(slides[slideDisplay], classNameForDisplay);
-    }
-        
-}
-
 
 function gatherImages () {
     
@@ -83,6 +34,7 @@ function createThumbnails () {
     }
 }
 
+// Helpers classes to change an element's class name
 function addClassToElement(element, className) {
     
     element.classList.add(className);
