@@ -1,11 +1,15 @@
-// Variables for thumbnails and className for thumbnails
-var sliderThumbnails = document.getElementById('sliderThumbnails'),
-    slidesLength = document.getElementsByClassName('image-wrapper').length,
-    classNameForThumbnails = 'slider-container__thumbnails__image';
+// Variables for initialization of the image slider
+var sliderDivs = document.getElementById('sliderDivs'),
+    sliderThumbnails = document.getElementById('sliderThumbnails'),
+    slides = document.getElementsByClassName('image-wrapper'),
+    sliderArrows = document.getElementById('sliderArrows'),
+    slidesLength = slides.length;
+
+// Default class name for thumbnainls styling
+var classNameForThumbnails = 'slider-container__thumbnails__image';
 
 function gatherImages () {
-    
-    var sliderDivs = document.getElementById('sliderDivs');
+
     var imagesArray = new Array();
     
     for(i = 0; i < slidesLength; i++) {
@@ -20,7 +24,8 @@ function gatherImages () {
 function createThumbnails () {
     
     var imagesArray = gatherImages();
-    
+    var thumbnailWidth = sliderDivs.children[0].offsetWidth / slides.length;
+
     for(i = 0; i < imagesArray.length; i++) {
         
         var imagediv = document.createElement('div');
@@ -29,6 +34,7 @@ function createThumbnails () {
         imageElement.src = imagesArray[i];
         imagediv.appendChild(imageElement);
         imagediv.setAttribute('onclick', 'playSelected('+ i +')');
+        imagediv.style.maxWidth = thumbnailWidth + 'px';
         addClassToElement(imagediv, classNameForThumbnails);
         sliderThumbnails.appendChild(imagediv);
     }

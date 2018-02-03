@@ -1,6 +1,6 @@
 .slider-container {
     position: relative;
-    max-width: 800px;
+    max-width: 980px;
     margin-left: auto;
     margin-right: auto;
     
@@ -14,7 +14,7 @@
             background-color: rgba(40, 40, 40, .7);
             position: absolute;
             top: 50%;
-            transform: translateY(-100%);
+            transform: translateY(-125%);
             left: 0;
             opacity: .8;
             transition: all, .3s ease-in-out;
@@ -31,7 +31,7 @@
             background-color: rgba(40, 40, 40, .7);
             position: absolute;
             top: 50%;
-            transform: translateY(-100%);
+            transform: translateY(-125%);
             right: 0;
             opacity: .8;
             transition: all, .3s ease-in-out;
@@ -47,9 +47,20 @@
         
         display: flex;
         
+        
         &__image {
-            
             max-width: 200px;
+            cursor: pointer;
+            opacity: .8;
+            transition: opacity .3s ease-out;
+            
+            &:hover {
+                opacity: 1;
+            }
+            
+            &--active {
+                opacity: 1;
+            }
         }
     }
 
