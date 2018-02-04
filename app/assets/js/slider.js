@@ -2,7 +2,8 @@
 var options = {
     autoplay: false,
     sliderDelay: 4000,
-    showThumbnails: false,
+    showThumbnails: true,
+    showCaptions: true,
     classNameForDisplay: 'image-wrapper--active',
     classNameForThumbnail: 'slider-container__thumbnails__image--active'
 }
@@ -14,6 +15,17 @@ var slideDisplay = 0;
 if (options.showThumbnails) {
     createThumbnails();
     addClassToElement(sliderThumbnails.children[slideDisplay], options.classNameForThumbnail);
+}
+
+// Checking whether to display or not based on the option selected
+if(options.showCaptions) {
+    for(i=0; i < slidesLength; i++) {
+        sliderDivs.children[i].children[1].style.display = 'block';
+    }
+} else {
+    for(i=0; i < slidesLength; i++) {
+        sliderDivs.children[i].children[1].style.display = 'none';
+    }
 }
 
 // Adding function to play the previous image when the left arrow is clicked
