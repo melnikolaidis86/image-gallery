@@ -63,8 +63,9 @@ function reset () {
 function playSelected(slideIndex) {
     
     reset();
-    addClassToElement(slides[slideIndex], options.classNameForDisplay);
-    addClassToElement(slides[slideIndex].children[0], options.imageTrsansition);
+    slideDisplay = slideIndex;
+    addClassToElement(slides[slideDisplay], options.classNameForDisplay);
+    addClassToElement(slides[slideDisplay].children[0], options.imageTrsansition);
     if(options.showThumbnails) {
         addClassToElement(sliderThumbnails.children[slideDisplay], options.classNameForThumbnail);  
     }
