@@ -1,8 +1,16 @@
 .slider-container {
     position: relative;
-    max-width: 980px;
+    max-width: 992px;
+    margin-top: 50px;
+    padding: 10px;
     margin-left: auto;
     margin-right: auto;
+    font-family: 'Oswald', sans-serif;
+    padding: 10px;
+    border-radius: 3px/6px;
+    background: #F2F2F2;
+    border: 1px solid #ccc;
+    box-shadow: rgba(0, 0, 0, .3) 0 2px 3px;
     
     &__arrows {
         
@@ -15,13 +23,18 @@
             position: absolute;
             top: 50%;
             transform: translateY(-125%);
-            left: 0;
+            left: 10px;
             opacity: .8;
             transition: all, .3s ease-in-out;
             
             &:hover {
                 background-color: rgba(40, 40, 40, .5);
                 opacity: 1;
+            }
+            
+            @media screen and (max-width: 720px) {
+                width: 42px;
+                height: 42px;
             }
         }
         
@@ -32,13 +45,18 @@
             position: absolute;
             top: 50%;
             transform: translateY(-125%);
-            right: 0;
+            right: 10px;
             opacity: .8;
             transition: all, .3s ease-in-out;
             
             &:hover {
                 background-color: rgba(40, 40, 40, .5);
                 opacity: 1;
+            }
+            
+            @media screen and (max-width: 720px) {
+                width: 42px;
+                height: 42px;
             }
         }
     }
@@ -47,6 +65,9 @@
         
         display: flex;
         
+        @media screen and (max-width: 640px) {
+            display: none;
+        }
         
         &__image {
             max-width: 200px;

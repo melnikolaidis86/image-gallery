@@ -8,6 +8,8 @@ var sliderDivs = document.getElementById('sliderDivs'),
 // Default class name for thumbnainls styling
 var classNameForThumbnails = 'slider-container__thumbnails__image';
 
+
+// A function to retrieve the attribute src of all images of the image gallery
 function gatherImages () {
 
     var imagesArray = new Array();
@@ -21,6 +23,7 @@ function gatherImages () {
     return imagesArray;
 }
 
+// A function to dynamically create thumbnail elements, as well as all attributes and classes needed to control them
 function createThumbnails () {
     
     var imagesArray = gatherImages();

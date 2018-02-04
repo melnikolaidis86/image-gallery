@@ -1,9 +1,11 @@
 // Default options for the image gallery
 var options = {
-    autoplay: false,
-    sliderDelay: 4000,
-    showThumbnails: true,
-    showCaptions: true,
+    autoplay: true, // whether to begin an automatic slideshow or not
+    sliderDelay: 5000, // duration of each slide when the autoplay option is true
+    showThumbnails: true, // option to display thumbnail
+    showCaptions: true, // option to display the caption
+    imageTrsansition: 'fade', // 3 options: slideLeft, sliderRight, fade
+    // default class names for elements to be controled by script
     classNameForDisplay: 'image-wrapper--active',
     classNameForThumbnail: 'slider-container__thumbnails__image--active'
 }
@@ -46,6 +48,10 @@ function reset () {
         removeClassFromElement(slides[i], options.classNameForDisplay);
     }
     
+    for (i=0; i < slidesLength; i++) {
+        removeClassFromElement(slides[i].children[0], options.imageTrsansition);
+    }
+    
     if(options.showThumbnails) {
         for (i=0; i < slidesLength; i++) {
             removeClassFromElement(sliderThumbnails.children[i], options.classNameForThumbnail);
@@ -58,6 +64,7 @@ function playSelected(slideIndex) {
     
     reset();
     addClassToElement(slides[slideIndex], options.classNameForDisplay);
+    addClassToElement(slides[slideIndex].children[0], options.imageTrsansition);
     if(options.showThumbnails) {
         addClassToElement(sliderThumbnails.children[slideDisplay], options.classNameForThumbnail);  
     }
@@ -70,6 +77,7 @@ function playNext () {
         reset();
         slideDisplay = 0;
         addClassToElement(slides[slideDisplay], options.classNameForDisplay);
+        addClassToElement(slides[slideDisplay].children[0], options.imageTrsansition);
         if(options.showThumbnails) {
           addClassToElement(sliderThumbnails.children[slideDisplay], options.classNameForThumbnail);  
         } 
@@ -77,6 +85,7 @@ function playNext () {
         reset();
         slideDisplay++;
         addClassToElement(slides[slideDisplay], options.classNameForDisplay);
+        addClassToElement(slides[slideDisplay].children[0], options.imageTrsansition);
         if(options.showThumbnails) {
           addClassToElement(sliderThumbnails.children[slideDisplay], options.classNameForThumbnail);  
         }
@@ -90,6 +99,7 @@ function playPrevious () {
         reset();
         slideDisplay = slidesLength - 1;
         addClassToElement(slides[slideDisplay], options.classNameForDisplay);
+        addClassToElement(slides[slideDisplay].children[0], options.imageTrsansition);
         if(options.showThumbnails) {
           addClassToElement(sliderThumbnails.children[slideDisplay], options.classNameForThumbnail);  
         }
@@ -97,6 +107,7 @@ function playPrevious () {
         reset();
         slideDisplay--;
         addClassToElement(slides[slideDisplay], options.classNameForDisplay);
+        addClassToElement(slides[slideDisplay].children[0], options.imageTrsansition);
         if(options.showThumbnails) {
           addClassToElement(sliderThumbnails.children[slideDisplay], options.classNameForThumbnail);  
         }

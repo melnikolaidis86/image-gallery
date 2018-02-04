@@ -1,4 +1,42 @@
+@import url('https://fonts.googleapis.com/css?family=Oswald');
+
 img {
     display: block;
     max-width: 100%;
+}
+
+body {
+    background-color: #da4453;
+    background: linear-gradient(to right, #da4453, #89216b); 
+}
+
+/* Keyframes for the images transition effect */
+@keyframes slideLeft {
+      0%   { transform: translateX(100%);}
+      100% { transform: translateX(0);}
+}
+
+@keyframes slideRight {
+      0%   { transform: translateX(-100%);}
+      100% { transform: translateX(0);}
+}
+
+@keyframes fade {
+    0% {opacity: 0;}
+    100% {opacity: 1;}
+}
+
+.slideLeft {
+    animation: slideLeft;
+    animation-duration: .3s;
+}
+
+.slideRight {
+    animation: slideRight;
+    animation-duration: .3s;
+}
+
+.fade {
+    animation: fade;
+    animation-duration: .4s;
 }
